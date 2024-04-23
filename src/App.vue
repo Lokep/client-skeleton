@@ -9,6 +9,5 @@ import { RouterView } from 'vue-router';
 <style>
 #app {
   @apply w-screen h-screen;
-  /* @apply  */
 }
 </style>

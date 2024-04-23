@@ -35,7 +35,17 @@ export default defineConfig(async () => ({
 
     Pages({
       dirs: ["src/views"],
-      extensions: ["vue", 'tsx']
+      extensions: ["vue", 'tsx'],
+
+      extendRoute(route) {
+        const path = route.path.replace(/^\//, '');
+        const meta = route.meta || {};
+
+        meta.layout = meta.layout || "default";
+
+        return { ...route, path, meta };
+      },
+
     }),
   ],
 
